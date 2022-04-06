@@ -1,6 +1,8 @@
 # laboratorio-nodejs-2022
 Slides e materiali per il laboratorio NodeJs 2022
 
+lezione 1
+
 
 ## Date lezioni:
 Le lezioni si svolgeranno dalle 15 alle 18 i seguenti giorni:
@@ -28,3 +30,5 @@ Il progetto dovrà
 + Utilizzare almeno una risorsa esterna come Database, Filesystem o un'API esterna
 + Utilizzare almeno 2 delle 4 tecniche di programmazione asincrona che abbiamo visto+ Contenere almeno 1 Unit Test
 + _(Opzionale)_ Fornito tramite reposity Git
+
+
