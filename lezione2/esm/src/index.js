@@ -4,10 +4,10 @@
  * ------------------------------------------------------------------------------------------------------------------------------------
  */
 
-import simpleHello, { alternativeHello } from "./esm.js";
-simpleHello("Roberto");
+// import simpleHello, { alternativeHello } from "./esm.js";
+// simpleHello("Roberto");
 
-alternativeHello("Obi");
+// alternativeHello("Obi");
 
 /**
  * ------------------------------------------------------------------------------------------------------------------------------------
@@ -28,9 +28,9 @@ alternativeHello("Obi");
  * ------------------------------------------------------------------------------------------------------------------------------------
  */
 
-// console.log("Start file")
-// import { direct, hit } from "./asyncModule.js";
+console.log("Start file")
+import { direct, hit } from "./asyncModule.js";
 
-// direct();
+direct();
 
-// hit();
+hit();

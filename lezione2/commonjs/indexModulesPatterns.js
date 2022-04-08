@@ -13,10 +13,10 @@
  * Substack exports
  * ------------------------------------------------------------------------------------------------------------------------------------
  */
-// const weasels = require('./src/substackExport')
+const logger = require('./src/substackExport')
 
-// weasels()
-// weasels.otherMembers()
+logger("ciao")
+logger.warning("attenzione")
 
 /**
  * ------------------------------------------------------------------------------------------------------------------------------------
@@ -36,6 +36,6 @@
  * ------------------------------------------------------------------------------------------------------------------------------------
  */
 
-const labLogger = require("./src/instanceExport");
-labLogger.info("Hello");
-labLogger.warning("Something happened");
+// const labLogger = require("./src/instanceExport");
+// labLogger.info("Hello");
+// labLogger.warning("Something happened");
