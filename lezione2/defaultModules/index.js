@@ -12,7 +12,6 @@ console.log(os.networkInterfaces());
 // ... -> tutti i vari argomenti
 console.log(process.argv);
 
-
 const downloadPage = require("./src/downloadPage");
 
 const WikiLoader = require("./src/WikiLoader");
@@ -24,10 +23,15 @@ const wikiUrl = loader.getUrl();
 // console.log(wikiUrl.host);
 // console.log(wikiUrl.href);
 
-downloadPage(wikiUrl.href, page => {
+downloadPage(wikiUrl.href).then(page => {
   // una path come "./data/ipa.html" funziona solo su mac, su windows sarebbe ".\data\ipa.html"
 
+  // Usare path.join e' come scrivere direttamente il path, ma si adatta al sistema operativo
   fs.writeFileSync(path.join(".", "data", "ipa.html"), page);
+
+  // E' possibile mettere la flag: a per appendere a un file invece di sovrascriverlo
+  
+  // fs.writeFileSync("./data/ipa.html", page, { flag: "a" });
 });
 
 process.on("beforeExit", code => {
