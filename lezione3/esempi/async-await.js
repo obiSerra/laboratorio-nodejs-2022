@@ -10,7 +10,7 @@ async function asyncWait(ms, label) {
     try {
       console.log(`[${label}] Async operation starting after: ${utils.getNow() - starting}ms`);
 
-      setTimeout(() => done(), ms);
+      setTimeout(() => done(`Done ${label}`), ms);
     } catch (e) {
       reject(e);
     }
@@ -19,7 +19,8 @@ async function asyncWait(ms, label) {
 
 async function asyncCaller(ms, label) {
   try {
-    await asyncWait(ms, label);
+    const ret = await asyncWait(ms, label);
+    console.log(ret);
     console.log(`[${label}] Finished in ${utils.getNow() - starting}ms`);
   } catch (e) {
     console.log("ERROR");

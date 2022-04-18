@@ -8,23 +8,23 @@ const starting = utils.getNow();
 
 // -------------------- Callbacks
 
-  // const cbWait = require("./callbacks");
+  const cbWait = require("./callbacks");
 
-  // cbWait(200, "1", () => {
-  //   console.log(`[1] finished after: ${utils.getNow() - starting}ms\n\n`);
-  //   cbWait(300, "2", () => {
-  //     console.log(`[2] finished after: ${utils.getNow() - starting}ms\n\n`);
-  //     cbWait(200, "3", () => {
-  //       console.log(`[3] finished after: ${utils.getNow() - starting}ms\n\n`);
-  //       cbWait(600, "4", () => {
-  //         console.log(`[4] finished after: ${utils.getNow() - starting}ms\n\n`);
-  //         cbWait(100, "5", () => {
-  //           console.log(`[5] finished after: ${utils.getNow() - starting}ms`);
-  //         });
-  //       });
-  //     });
-  //   });
-  // });
+  cbWait(200, "1", () => {
+    console.log(`[1] finished after: ${utils.getNow() - starting}ms\n\n`);
+    cbWait(300, "2", () => {
+      console.log(`[2] finished after: ${utils.getNow() - starting}ms\n\n`);
+      cbWait(200, "3", () => {
+        console.log(`[3] finished after: ${utils.getNow() - starting}ms\n\n`);
+        cbWait(600, "4", () => {
+          console.log(`[4] finished after: ${utils.getNow() - starting}ms\n\n`);
+          cbWait(100, "5", () => {
+            console.log(`[5] finished after: ${utils.getNow() - starting}ms`);
+          });
+        });
+      });
+    });
+  });
 
 // -------------------- Events
 
@@ -42,7 +42,7 @@ const starting = utils.getNow();
 
 // -------------------- Promise
 
-const promWait = require("./promise");
+// const promWait = require("./promise");
 
 promWait(200, "1")
     .then(() => console.log(`[1] Finished in ${utils.getNow() - starting}ms\n`))

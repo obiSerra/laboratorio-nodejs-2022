@@ -13,8 +13,13 @@ const slowFunction = () => {
   for (let i = 0; i < 10e9; i++) {}
   console.log("dei task successivi");
 };
+
 console.log("Starting");
 console.log("Ogni riga");
+// console.log(elements)
+// const unaFn = () => {
+
+// }
 const elements = ["viene", "eseguita", "dopo", "quella", "precedente"];
 
 elements.forEach(e => console.log(e));

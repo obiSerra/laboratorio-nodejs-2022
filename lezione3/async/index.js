@@ -1,9 +1,13 @@
 const axios = require("axios");
 
 function getPageTitle(onDone) {
-  axios.get("https://en.wikipedia.org/wiki/Node.js").then(response => {
-    onDone(response.data);
-  });
+  const prom = axios.get("https://en.wikipedia.org/wiki/Node.js");
+  prom
+    .then(response => {
+      onDone(response.data);
+    })
+    .catch(err => console.error(err))
+    .finally(() => console.log("ALL DONE"));
 }
 
 console.log("1) Starting");
