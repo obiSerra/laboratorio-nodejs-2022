@@ -9,22 +9,63 @@ function callLogger(req, res, next) {
 }
 
 const baseUrl = "https://jsonplaceholder.typicode.com/todos";
-function addMockTime(req, res, next) {
+
+// with promise
+
+// function addMockTime(req, res, next) {
+//   const { id } = req.query;
+//   if (id === undefined) {
+//     res.send("Missing ID!!!!");
+//     return;
+//   }
+//   axios.get(`${baseUrl}/${id}`).then(axResp => {
+//     console.log("got response");
+//     console.log(axResp.data);
+//     const { title } = axResp.data;
+//     if (title !== undefined) {
+//       req.nodeLab = {
+//         title,
+//       };
+//     } else {
+//       req.nodeLab = {
+//         title: "title not found",
+//       };
+//     }
+
+//     console.log("doing next");
+//     next();
+//   }).catch(err => {
+//       res.send(err)
+//   });
+// }
+
+// with async/await
+async function addMockTime(req, res, next) {
   const { id } = req.query;
   if (id === undefined) {
     res.send("Missing ID!!!!");
     return;
   }
-  axios.get(`${baseUrl}/${id}`).then(axResp => {
+  try {
+    const axResp = await axios.get(`${baseUrl}/${id}`);
     console.log("got response");
     console.log(axResp.data);
     const { title } = axResp.data;
-    req.nodeLab = {
-      title,
-    };
+    if (title !== undefined) {
+      req.nodeLab = {
+        title,
+      };
+    } else {
+      req.nodeLab = {
+        title: "title not found",
+      };
+    }
+
     console.log("doing next");
     next();
-  });
+  } catch (e) {
+    res.send(e);
+  }
 }
 
 app.use(callLogger);
