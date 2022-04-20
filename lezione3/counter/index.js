@@ -21,11 +21,16 @@ if (process.argv.length < 3) {
 
   function countWords(str) {
     // TODO fix me please!!!!
-    const words = str
-      .replace(/\n/, " ")
-      .split(" ")
-      .filter(w => w === word);
-    console.log(words.length);
+
+    let count = [];
+    const lowerText = str.toLowerCase();
+    const lowerWord = word.toLowerCase();
+    let lastFound = 0;
+    while (lastFound > -1) {
+      lastFound = lowerText.indexOf(lowerWord, lastFound + word.length);
+      if (lastFound > -1) count++;
+    }
+    console.log(count);
   }
 
   reader.readFile(countWords);
