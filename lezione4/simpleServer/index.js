@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-// const utils = require("../utils")
+const utils = require("../utils")
 
 // Porta su cui gira il nostro server
 const port = 3000;
@@ -16,16 +16,17 @@ app.use(express.json());
 app.get("/", (req, res) => {
   // console.log(req);
 
-  console.log(req.query);
+  console.log("query params", req.query);
   res.send("Hello World!");
 });
 // Json Response
 app.get("/json", (req, res) => {
   res.send({ json: "response" });
+  // res.json({ json: "response" });
 });
 
 // Path params
-app.post("/:id", (req, res) => {
+app.get("/post/:id/user/:idUser", (req, res) => {
   console.log("Params", req.params);
   const { id } = req.params;
   res.send({ requestedId: id });
@@ -33,6 +34,6 @@ app.post("/:id", (req, res) => {
 
 // Inizializiamo il server
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-  // console.log(`Example app listening on ${utils.currentIp()}:${port}`);
+  // console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on ${utils.currentIp()}:${port}`);
 });

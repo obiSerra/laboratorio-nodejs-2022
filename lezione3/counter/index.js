@@ -20,9 +20,7 @@ if (process.argv.length < 3) {
   const word = "const";
 
   function countWords(str) {
-    // TODO fix me please!!!!
-
-    let count = [];
+    let count = 0;
     const lowerText = str.toLowerCase();
     const lowerWord = word.toLowerCase();
     let lastFound = 0;
