@@ -44,7 +44,7 @@ const starting = utils.getNow();
 
 // const promWait = require("./promise");
 
-promWait(200, "1")
+const prm = promWait(200, "1")
     .then(() => console.log(`[1] Finished in ${utils.getNow() - starting}ms\n`))
     .then(() => promWait(300, "2"))
     .then(() => console.log(`[2] Finished in ${utils.getNow() - starting}ms\n`))
