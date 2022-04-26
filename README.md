@@ -25,7 +25,8 @@ Il progetto dovrà
 + Utilizzare almeno un pacchetto npm e un modulo fornito da node (path, fs, ...)
 + Utilizzare correttamente le dependencies (pacchetti salvati con `--save` e cartella `node_modules` non fornita insieme ai sorgenti del progetto, ma ricreabile con `npm install`)
 + Utilizzare almeno una risorsa esterna come Database, Filesystem o un'API esterna
-+ Utilizzare almeno 2 delle 4 tecniche di programmazione asincrona che abbiamo visto+ Contenere almeno 1 Unit Test
++ Utilizzare almeno 2 delle 4 tecniche di programmazione asincrona che abbiamo visto
++ (opzionale Contenere almeno 1 Unit Test)
 + Fornito tramite reposity Git 
 
 
